@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/scene"
+        android:icon="@drawable/ic_collections_white_24dp"
+        android:title="Scene" />
+    <item
+        android:id="@+id/need"
+        android:icon="@drawable/ic_work_white_24dp"
+        android:title="Need" />
+    <item
+        android:id="@+id/forum"
+        android:icon="@drawable/ic_chat_white_24dp"
+        android:title="Forum" />
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_person_white_24dp"
+        android:title="Account" />
+</menu>

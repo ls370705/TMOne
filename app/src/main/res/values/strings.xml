@@ -97,4 +97,5 @@
     <string name="title_activity_alert_list">AlertListActivity</string>
     <string name="title_activity_alert">AlertActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_bars">Bars</string>
 </resources>

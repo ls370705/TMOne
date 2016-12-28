@@ -46,6 +46,10 @@
             android:name=".settings.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Bars.Bars"
+            android:label="@string/title_bars"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
