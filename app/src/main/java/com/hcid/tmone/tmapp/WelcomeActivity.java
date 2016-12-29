@@ -9,7 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.hcid.tmone.tmapp.Bars.Bars;
+import com.hcid.tmone.tmapp.R;
+import com.hcid.tmone.tmapp.framework.FrameworkActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -20,14 +21,14 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newAct = new Intent();
-                newAct.setClass(WelcomeActivity.this, Bars.class);
-                startActivity(newAct);
-                WelcomeActivity.this.finish();
+                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
             }
         });
 

@@ -1,29 +1,35 @@
-package com.hcid.tmone.tmapp.Bars;
+package com.hcid.tmone.tmapp.framework;
 
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-
+import android.view.View;
 import com.hcid.tmone.tmapp.alerts.AlertListActivity;
 import com.hcid.tmone.tmapp.checklist.CheckListActivity;
 import com.hcid.tmone.tmapp.introduction.DestinationActivity;
 import com.hcid.tmone.tmapp.settings.SettingsActivity;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
-
 import com.hcid.tmone.tmapp.R;
 
-public class Bars extends AppCompatActivity {
+public class FrameworkActivity extends AppCompatActivity {
 
     BottomBar mBottomBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bar);
+        setContentView(R.layout.activity_framework);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_keyboard_arrow_left_white_24dp);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
         mBottomBar.setItemsFromMenu(R.menu.menu_bottom_bar, new OnMenuTabClickListener() {
