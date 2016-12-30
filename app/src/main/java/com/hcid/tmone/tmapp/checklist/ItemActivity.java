@@ -1,15 +1,22 @@
 package com.hcid.tmone.tmapp.checklist;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.hcid.tmone.tmapp.R;
 
-public class ItemActivity extends AppCompatActivity {
+public class ItemActivity extends Fragment {
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.activity_item, container, false);
+        setHasOptionsMenu(true);
+        return v;
     }
 
 }

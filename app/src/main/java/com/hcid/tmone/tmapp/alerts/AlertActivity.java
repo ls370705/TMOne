@@ -1,15 +1,22 @@
 package com.hcid.tmone.tmapp.alerts;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.hcid.tmone.tmapp.R;
 
-public class AlertActivity extends AppCompatActivity {
+public class AlertActivity extends Fragment {
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alert);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.activity_alert, container, false);
+        setHasOptionsMenu(true);
+        return v;
     }
 
 }

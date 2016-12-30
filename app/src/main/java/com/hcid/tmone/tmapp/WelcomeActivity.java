@@ -7,14 +7,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-
-import com.hcid.tmone.tmapp.R;
+import android.widget.ImageView;
 import com.hcid.tmone.tmapp.framework.FrameworkActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    private Button button;
+    private ImageView image[] = new ImageView[5];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +22,40 @@ public class WelcomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new Button.OnClickListener() {
+        image[0] = (ImageView) findViewById(R.id.image1);
+        image[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
+            }
+        });
+
+        image[1] = (ImageView) findViewById(R.id.image2);
+        image[1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
+            }
+        });
+
+        image[2] = (ImageView) findViewById(R.id.image3);
+        image[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
+            }
+        });
+
+        image[3] = (ImageView) findViewById(R.id.image4);
+        image[3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
+            }
+        });
+
+        image[4] = (ImageView) findViewById(R.id.image5);
+        image[4].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
