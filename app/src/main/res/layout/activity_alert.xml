@@ -7,4 +7,11 @@
     android:background="#d3d3d3"
     tools:context="com.hcid.tmone.tmapp.alerts.AlertActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alert Activity"
+        android:id="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
