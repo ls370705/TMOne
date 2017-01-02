@@ -7,6 +7,6 @@
     <string name="title_activity_item">ItemActivity</string>
     <string name="title_activity_alert_list">Forum</string>
     <string name="title_activity_alert">AlertActivity</string>
-    <string name="title_activity_settings">Account</string>
+    <string name="title_activity_account">Account</string>
     <string name="title_activity_framework">Cambodia</string>
 </resources>

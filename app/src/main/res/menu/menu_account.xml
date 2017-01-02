@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hcid.tmone.tmapp.checklist.CheckListActivity">
+    <item
+        android:id="@+id/account_edit"
+        android:title="Edit"
+        android:icon="@drawable/ic_create_white_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/account_help"
+        android:title="Help"
+        app:showAsAction="never" />
+</menu>

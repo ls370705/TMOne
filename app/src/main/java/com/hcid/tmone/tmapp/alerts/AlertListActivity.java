@@ -1,5 +1,6 @@
 package com.hcid.tmone.tmapp.alerts;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,12 +11,19 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.hcid.tmone.tmapp.R;
 
 public class AlertListActivity extends Fragment {
+
+    int[] images = new int[] {R.drawable.ic_danger, R.drawable.ic_question, R.drawable.ic_question,
+            R.drawable.ic_danger, R.drawable.ic_danger, R.drawable.ic_question, R.drawable.ic_danger};
+    String[] titles = new String[] {"title1", "title2", "title3", "title4", "title5", "title6", "title7"};
+    String[] times = new String[] {"time1", "time2", "time3", "time4", "time5", "time6", "time7"};
 
     @Nullable
     @Override
@@ -24,10 +32,8 @@ public class AlertListActivity extends Fragment {
         setHasOptionsMenu(true);
 
         ListView listView = (ListView)v.findViewById(R.id.listView);
-        final String[] arr = new String[] {"A","B","C","D","E","F","G"};
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,arr);
-        listView.setAdapter(adapter);
+        listView.setAdapter(new MyAdapter(getActivity()));
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -39,6 +45,44 @@ public class AlertListActivity extends Fragment {
         });
 
         return v;
+    }
+
+    public class MyAdapter extends BaseAdapter {
+        private LayoutInflater myInflater;
+
+        public MyAdapter(Context c) {
+            myInflater = LayoutInflater.from(c);
+        }
+
+        @Override
+        public int getCount() {
+            return images.length;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return images[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            convertView = myInflater.inflate(R.layout.alert_listview, null);
+
+            ImageView image_list = (ImageView) convertView.findViewById(R.id.list_image);
+            TextView title_list = (TextView) convertView.findViewById(R.id.list_title);
+            TextView time_list = (TextView) convertView.findViewById(R.id.list_time);
+
+            image_list.setImageResource(images[position]);
+            title_list.setText(titles[position]);
+            time_list.setText(times[position]);
+
+            return convertView;
+        }
     }
 
     @Override

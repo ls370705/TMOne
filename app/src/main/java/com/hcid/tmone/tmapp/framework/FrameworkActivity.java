@@ -8,7 +8,7 @@ import android.view.View;
 import com.hcid.tmone.tmapp.alerts.AlertListActivity;
 import com.hcid.tmone.tmapp.checklist.CheckListActivity;
 import com.hcid.tmone.tmapp.introduction.DestinationActivity;
-import com.hcid.tmone.tmapp.settings.SettingsActivity;
+import com.hcid.tmone.tmapp.account.AccountActivity;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 import com.hcid.tmone.tmapp.R;
@@ -37,20 +37,16 @@ public class FrameworkActivity extends AppCompatActivity {
             public void onMenuTabSelected(@IdRes int menuItemId) {
                 switch (menuItemId) {
                     case R.id.scene:
-                        DestinationActivity d = new DestinationActivity();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, d).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, new DestinationActivity()).commit();
                         break;
                     case R.id.need:
-                        CheckListActivity c = new CheckListActivity();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, c).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, new CheckListActivity()).commit();
                         break;
                     case R.id.forum:
-                        AlertListActivity a = new AlertListActivity();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, a).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, new AlertListActivity()).commit();
                         break;
                     case R.id.account:
-                        SettingsActivity s = new SettingsActivity();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, s).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, new AccountActivity()).commit();
                         break;
                 }
             }
