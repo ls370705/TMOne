@@ -1,8 +1,11 @@
 package com.hcid.tmone.tmapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
@@ -40,25 +43,46 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        //SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.main_search));
-        //searchView.setOnQueryTextListener(queryListener);
+
+        final MenuItem item = menu.findItem(R.id.main_search);
+        SearchView searchView = (SearchView)item.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                item.collapseActionView();
+                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.main_help) {
+        if (item.getItemId() == R.id.main_help) {
+            DialogEvent();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    private void DialogEvent() {
+        new AlertDialog.Builder(WelcomeActivity.this)
+                .setTitle("Help")
+                .setMessage("Put some help messages here.")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        return;
+                    }
+                })
+                .show();
     }
 }
