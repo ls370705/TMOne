@@ -42,6 +42,17 @@
                 android:paddingLeft="20sp"
                 android:textSize="15sp" />
 
+            <ToggleButton
+                android:id="@+id/heart1"
+                android:textOn=""
+                android:textOff=""
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginRight="20sp"
+                android:background="@drawable/custom_heart"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+
         </RelativeLayout>
 
         <ImageView
@@ -84,6 +95,17 @@
                 android:paddingLeft="20sp"
                 android:textSize="15sp" />
 
+            <ToggleButton
+                android:id="@+id/heart2"
+                android:textOn=""
+                android:textOff=""
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginRight="20sp"
+                android:background="@drawable/custom_heart"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+
         </RelativeLayout>
 
         <ImageView
@@ -125,6 +147,17 @@
                 android:paddingBottom="5sp"
                 android:paddingLeft="20sp"
                 android:textSize="15sp" />
+
+            <ToggleButton
+                android:id="@+id/heart3"
+                android:textOn=""
+                android:textOff=""
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginRight="20sp"
+                android:background="@drawable/custom_heart"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
 

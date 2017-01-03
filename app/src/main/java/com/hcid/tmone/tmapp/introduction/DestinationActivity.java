@@ -8,16 +8,21 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.hcid.tmone.tmapp.R;
 
 public class DestinationActivity extends Fragment {
+
+    private ImageView heart[] = new ImageView[3];
+    private int heart_flag[] = new int[3];
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_destination, container, false);
         setHasOptionsMenu(true);
+
         return v;
     }
 

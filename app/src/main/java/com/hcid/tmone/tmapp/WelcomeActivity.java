@@ -23,44 +23,18 @@ public class WelcomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         image[0] = (ImageView) findViewById(R.id.image1);
-        image[0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
-            }
-        });
-
         image[1] = (ImageView) findViewById(R.id.image2);
-        image[1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
-            }
-        });
-
         image[2] = (ImageView) findViewById(R.id.image3);
-        image[2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
-            }
-        });
-
         image[3] = (ImageView) findViewById(R.id.image4);
-        image[3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
-            }
-        });
-
         image[4] = (ImageView) findViewById(R.id.image5);
-        image[4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
-            }
-        });
+        for (int i = 0; i < 5; i++) {
+            image[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
+                }
+            });
+        }
 
     }
 
@@ -68,6 +42,8 @@ public class WelcomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        //SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.main_search));
+        //searchView.setOnQueryTextListener(queryListener);
         return true;
     }
 
