@@ -13,10 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hcid.tmone.tmapp.R;
-import com.hcid.tmone.tmapp.WelcomeActivity;
+import com.hcid.tmone.tmapp.MainActivity;
 import com.hcid.tmone.tmapp.utilities.MemDB;
 
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ public class DestinationActivity extends Fragment {
         setHasOptionsMenu(true);
 
         MemDB memDB = new MemDB();
-        ArrayList<String> attractions = memDB.getAttractions(WelcomeActivity.currentSelectedPlace);
+        ArrayList<String> attractions = memDB.getAttractions(MainActivity.currentSelectedPlace);
         TextView title1 = (TextView) v.findViewById(R.id.title1);
         TextView title2 = (TextView) v.findViewById(R.id.title2);
         TextView title3 = (TextView) v.findViewById(R.id.title3);

@@ -1,96 +1,68 @@
 package com.hcid.tmone.tmapp;
 
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import com.hcid.tmone.tmapp.framework.FrameworkActivity;
-import com.hcid.tmone.tmapp.utilities.MemDB;
 
-import java.util.ArrayList;
+import com.hcid.tmone.tmapp.framework.FrameworkActivity;
+import com.hcid.tmone.tmapp.utilities.EditDistance;
+import com.hcid.tmone.tmapp.utilities.MemDB;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    private ImageView image[] = new ImageView[5];
-    public static String currentSelectedPlace = "Cambodia";
+    MemDB memDB = new MemDB();
+    private AutoCompleteTextView autoCompleteTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_welcome);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        MemDB memDB = new MemDB();
-        final String[] places = memDB.getPlaces();
-
-        image[0] = (ImageView) findViewById(R.id.image1);
-        image[1] = (ImageView) findViewById(R.id.image2);
-        image[2] = (ImageView) findViewById(R.id.image3);
-        image[3] = (ImageView) findViewById(R.id.image4);
-        image[4] = (ImageView) findViewById(R.id.image5);
-        for (int i = 0; i < 5; i++) {
-            final String selectedPlace = places[i];
-            image[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    currentSelectedPlace = selectedPlace;
-                    startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
-                }
-            });
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),android.R.layout.select_dialog_singlechoice,memDB.getPlaces());
+        autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.drop_down);
+        if (autoCompleteTextView != null) {
+            autoCompleteTextView.setThreshold(1);
+            autoCompleteTextView.setAdapter(adapter);
         }
 
+        ImageView mimageView = (ImageView) findViewById(R.id.image1);
+
+        Bitmap mbitmap = ((BitmapDrawable)mimageView.getDrawable()).getBitmap();
+//        Bitmap mbitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.img_angkor_wat,null)).getBitmap();
+        Bitmap imageRounded = Bitmap.createBitmap(mbitmap.getWidth(), mbitmap.getHeight(), mbitmap.getConfig());
+        Canvas canvas = new Canvas(imageRounded);
+        Paint mpaint = new Paint();
+        mpaint.setAntiAlias(true);
+        mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 100, 100, mpaint);// Round Image Corner 100 100 100 100
+        mimageView.setImageBitmap(imageRounded);
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+    public void search(View view){
+        String destination = autoCompleteTextView.getText().toString();
+        autoCompleteTextView.setText("");
 
-        final MenuItem item = menu.findItem(R.id.main_search);
-        SearchView searchView = (SearchView)item.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                item.collapseActionView();
-                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
-                return false;
-            }
+        MainActivity.currentSelectedPlace = EditDistance.getResult(destination,memDB.getPlaces());
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-
-        return true;
+        Intent intent = new Intent(WelcomeActivity.this, FrameworkActivity.class);
+        startActivity(intent);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.main_help) {
-            DialogEvent();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void DialogEvent() {
-        new AlertDialog.Builder(WelcomeActivity.this)
-                .setTitle("Help")
-                .setMessage("Put some help messages here.")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        return;
-                    }
-                })
-                .show();
-    }
 }
