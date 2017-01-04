@@ -1,10 +1,14 @@
 package com.hcid.tmone.tmapp.framework;
 
+import android.app.FragmentManager;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+
+import com.hcid.tmone.tmapp.WelcomeActivity;
 import com.hcid.tmone.tmapp.alerts.AlertListActivity;
 import com.hcid.tmone.tmapp.checklist.CheckListActivity;
 import com.hcid.tmone.tmapp.introduction.DestinationActivity;
@@ -16,6 +20,7 @@ import com.hcid.tmone.tmapp.R;
 public class FrameworkActivity extends AppCompatActivity {
 
     BottomBar mBottomBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,7 @@ public class FrameworkActivity extends AppCompatActivity {
                 finish();
             }
         });
+        setTitle(WelcomeActivity.currentSelectedPlace);
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
         mBottomBar.setItemsFromMenu(R.menu.menu_bottom_bar, new OnMenuTabClickListener() {
@@ -55,5 +61,19 @@ public class FrameworkActivity extends AppCompatActivity {
             public void onMenuTabReSelected(@IdRes int menuItemId) {
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+        Log.d("COUNT", "Count: " + count);
+        if (count == 0) {
+            super.onBackPressed();
+
+        } else {
+            getSupportFragmentManager().popBackStack();
+        }
+
     }
 }

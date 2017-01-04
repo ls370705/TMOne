@@ -2,6 +2,7 @@ package com.hcid.tmone.tmapp.alerts;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,16 +18,20 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hcid.tmone.tmapp.R;
+import com.hcid.tmone.tmapp.utilities.MemDB;
 
 public class AlertListActivity extends Fragment {
 
+    public static String currentIncident = "incident 1";
     int[] images = new int[] {R.drawable.ic_danger, R.drawable.ic_question, R.drawable.ic_question,
             R.drawable.ic_danger, R.drawable.ic_danger, R.drawable.ic_question, R.drawable.ic_danger};
-    String[] titles = new String[] {"title1", "title2", "title3", "title4", "title5", "title6", "title7"};
-    String[] times = new String[] {"time1", "time2", "time3", "time4", "time5", "time6", "time7"};
+    MemDB memDB = new MemDB();
+    String[] titles = memDB.getIncidentTitles();
+    String[] severities = new String[memDB.getNUMBER_OF_INCEDENTS()];
 
     @Nullable
     @Override
@@ -34,12 +39,19 @@ public class AlertListActivity extends Fragment {
         View v = inflater.inflate(R.layout.activity_alert_list, container, false);
         setHasOptionsMenu(true);
 
-        ListView listView = (ListView)v.findViewById(R.id.listView);
+        for(int i = 0 ; i < memDB.getNUMBER_OF_INCEDENTS() ; i++){
+            severities[i] = memDB.getIncidentSeverity(titles[i]);
+        }
+
+        final ListView listView = (ListView)v.findViewById(R.id.listView);
         listView.setAdapter(new MyAdapter(getActivity()));
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                currentIncident = listView.getItemAtPosition(position).toString();
+
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame, new AlertActivity());
                 transaction.addToBackStack(null);
@@ -64,8 +76,9 @@ public class AlertListActivity extends Fragment {
 
         @Override
         public Object getItem(int position) {
-            return images[position];
+            return titles[position];
         }
+
 
         @Override
         public long getItemId(int position) {
@@ -78,11 +91,11 @@ public class AlertListActivity extends Fragment {
 
             ImageView image_list = (ImageView) convertView.findViewById(R.id.list_image);
             TextView title_list = (TextView) convertView.findViewById(R.id.list_title);
-            TextView time_list = (TextView) convertView.findViewById(R.id.list_time);
+            TextView severity_list = (TextView) convertView.findViewById(R.id.list_severity);
 
             image_list.setImageResource(images[position]);
             title_list.setText(titles[position]);
-            time_list.setText(times[position]);
+            severity_list.setText(severities[position]);
 
             return convertView;
         }

@@ -12,8 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hcid.tmone.tmapp.R;
+import com.hcid.tmone.tmapp.WelcomeActivity;
+import com.hcid.tmone.tmapp.utilities.MemDB;
+
+import java.util.ArrayList;
 
 public class DestinationActivity extends Fragment {
 
@@ -26,6 +32,22 @@ public class DestinationActivity extends Fragment {
         View v = inflater.inflate(R.layout.activity_destination, container, false);
         setHasOptionsMenu(true);
 
+        MemDB memDB = new MemDB();
+        ArrayList<String> attractions = memDB.getAttractions(WelcomeActivity.currentSelectedPlace);
+        TextView title1 = (TextView) v.findViewById(R.id.title1);
+        TextView title2 = (TextView) v.findViewById(R.id.title2);
+        TextView title3 = (TextView) v.findViewById(R.id.title3);
+
+        title1.setText(attractions.get(0));
+        title2.setText(attractions.get(1));
+        title3.setText(attractions.get(2));
+//        ImageView imageView = (ImageView) v.findViewById(R.id.image1);
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getContext(), "image clicked", Toast.LENGTH_SHORT).show();
+//            }
+//        });
         return v;
     }
 

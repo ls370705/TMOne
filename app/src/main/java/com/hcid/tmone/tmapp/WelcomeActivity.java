@@ -12,11 +12,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import com.hcid.tmone.tmapp.framework.FrameworkActivity;
+import com.hcid.tmone.tmapp.utilities.MemDB;
+
+import java.util.ArrayList;
 
 public class WelcomeActivity extends AppCompatActivity {
 
     private ImageView image[] = new ImageView[5];
-
+    public static String currentSelectedPlace = "Cambodia";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +28,20 @@ public class WelcomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        MemDB memDB = new MemDB();
+        final String[] places = memDB.getPlaces();
+
         image[0] = (ImageView) findViewById(R.id.image1);
         image[1] = (ImageView) findViewById(R.id.image2);
         image[2] = (ImageView) findViewById(R.id.image3);
         image[3] = (ImageView) findViewById(R.id.image4);
         image[4] = (ImageView) findViewById(R.id.image5);
         for (int i = 0; i < 5; i++) {
+            final String selectedPlace = places[i];
             image[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    currentSelectedPlace = selectedPlace;
                     startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
                 }
             });
