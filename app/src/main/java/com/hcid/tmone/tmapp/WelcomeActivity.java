@@ -1,20 +1,9 @@
 package com.hcid.tmone.tmapp;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -24,6 +13,10 @@ import com.hcid.tmone.tmapp.framework.FrameworkActivity;
 import com.hcid.tmone.tmapp.utilities.EditDistance;
 import com.hcid.tmone.tmapp.utilities.MemDB;
 
+/**
+ * Welcome Activity.
+ * For user to get started and choose a destination
+ */
 public class WelcomeActivity extends AppCompatActivity {
 
     MemDB memDB = new MemDB();
@@ -70,10 +63,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
         currentSelectedPlace = EditDistance.getResult(destination,memDB.getPlaces());
 
-        Log.d("PLACEWEL",currentSelectedPlace);
         Intent intent = new Intent(WelcomeActivity.this, FrameworkActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
-
 }

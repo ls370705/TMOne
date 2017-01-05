@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/incident_title"
-            android:text="test"
             android:textAlignment="center"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
@@ -28,7 +27,6 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/incident_severity"
-            android:text="test"
             android:textAlignment="center"
             android:layout_below="@+id/incident_title"
             android:layout_centerHorizontal="true" />
@@ -38,7 +36,6 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/incident_date"
-            android:text="test"
             android:textAlignment="center"
             android:layout_below="@+id/incident_severity"
             android:layout_centerHorizontal="true" />
@@ -48,7 +45,6 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/incident_description"
-            android:text="test"
             android:textAlignment="center"
             android:layout_below="@+id/incident_date"
             android:layout_centerHorizontal="true" />

@@ -1,7 +1,6 @@
 package com.hcid.tmone.tmapp.checklist;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -34,9 +33,23 @@ public class CheckListActivity extends Fragment {
 
         LinearLayout left_col = (LinearLayout) v.findViewById(R.id.left_col);
         LinearLayout right_col = (LinearLayout) v.findViewById(R.id.right_col);
+        String[] checklist = memDB.getChecklist();
 
         for(int i = 0 ; i < left_col.getChildCount() ; i++){
+            LinearLayout temp = (LinearLayout) left_col.getChildAt(i);
+            TextView tempTextTitle = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(0));
+            TextView tempTextVote = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(1));
+            tempTextTitle.setText(checklist[i * 2]);
+            String votes = "votes: " + memDB.getItemVotes(checklist[i * 2]) + "";
+            tempTextVote.setText(votes);
             items[i * 2] = (LinearLayout) left_col.getChildAt(i);
+
+            temp = (LinearLayout) right_col.getChildAt(i);
+            tempTextTitle = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(0));
+            tempTextVote = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(1));
+            tempTextTitle.setText(checklist[i * 2 + 1]);
+            votes = "votes: " + memDB.getItemVotes(checklist[i * 2 + 1]) + "";
+            tempTextVote.setText(votes);
             items[i * 2 + 1] = (LinearLayout) right_col.getChildAt(i);
         }
 
@@ -45,7 +58,7 @@ public class CheckListActivity extends Fragment {
                 @Override
                 public void onClick(View v) {
                     currentSelectedItem = ((TextView)((RelativeLayout) i.getChildAt(1)).getChildAt(0)).getText().toString();
-                    Log.d("ITEM", "Current Selected Item: " + currentSelectedItem);
+
                     getFragmentManager().beginTransaction().replace(R.id.frame,new ItemActivity()).addToBackStack(null).commit();
                     FrameworkActivity.canBack = true;
                 }
@@ -76,7 +89,6 @@ public class CheckListActivity extends Fragment {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        return;
                     }
                 })
                 .show();

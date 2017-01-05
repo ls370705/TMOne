@@ -53,7 +53,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 1"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -61,7 +60,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 1"
+                            android:id="@+id/vote1"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -91,7 +90,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 3"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -99,7 +97,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 3"
+                            android:id="@+id/vote3"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -129,7 +127,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 5"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -137,7 +134,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 5"
+                            android:id="@+id/vote5"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -167,7 +164,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 7"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -175,7 +171,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 7"
+                            android:id="@+id/vote7"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -205,7 +201,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 9"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -213,7 +208,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 9"
+                            android:id="@+id/vote9"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -243,7 +238,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 11"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -251,7 +245,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 11"
+                            android:id="@+id/vote11"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -290,7 +284,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 2"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -298,7 +291,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 2"
+                            android:id="@+id/vote2"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -328,7 +321,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 4"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -336,7 +328,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 4"
+                            android:id="@+id/vote4"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -366,7 +358,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 6"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -374,7 +365,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 6"
+                            android:id="@+id/vote6"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -404,7 +395,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 8"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -412,7 +402,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 8"
+                            android:id="@+id/vote8"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -442,7 +432,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 10"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -450,7 +439,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 10"
+                            android:id="@+id/vote10"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>
@@ -480,7 +469,6 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="item 12"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
                         <TextView
@@ -488,7 +476,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
-                            android:text="vote: 12"
+                            android:id="@+id/vote12"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentTop="true"/>
                     </RelativeLayout>

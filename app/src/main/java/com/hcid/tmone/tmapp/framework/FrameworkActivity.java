@@ -4,7 +4,6 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.hcid.tmone.tmapp.WelcomeActivity;
@@ -29,7 +28,6 @@ public class FrameworkActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Log.d("PLACEFRA",WelcomeActivity.currentSelectedPlace);
         setTitle(WelcomeActivity.currentSelectedPlace);
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);

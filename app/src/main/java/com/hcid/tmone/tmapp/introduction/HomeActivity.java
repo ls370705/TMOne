@@ -13,16 +13,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.hcid.tmone.tmapp.R;
 import com.hcid.tmone.tmapp.WelcomeActivity;
 import com.hcid.tmone.tmapp.utilities.MemDB;
 
 public class HomeActivity extends Fragment {
-
-    private ImageView heart[] = new ImageView[3];
-    private int heart_flag[] = new int[3];
 
     @Nullable
     @Override
@@ -31,6 +28,16 @@ public class HomeActivity extends Fragment {
         setHasOptionsMenu(true);
 
         MemDB memDB = new MemDB();
+
+        TextView intro_title = (TextView) v.findViewById(R.id.intro_title);
+        TextView intro_info = (TextView) v.findViewById(R.id.intro_info);
+        TextView intro_description = (TextView) v.findViewById(R.id.intro_description);
+        String currentPlace = WelcomeActivity.currentSelectedPlace;
+
+        intro_title.setText(currentPlace);
+        intro_info.setText(memDB.getInfo(currentPlace));
+        intro_description.setText(memDB.getIntro(currentPlace));
+
 
         Button changeCity = (Button) v.findViewById(R.id.change_destination);
         changeCity.setOnClickListener(new View.OnClickListener() {

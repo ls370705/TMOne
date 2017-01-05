@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/background_blurred"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/app_name"/>
+
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Cambodia"
         android:textAlignment="center"
         android:id="@+id/intro_title"
         android:paddingTop="50dp"
@@ -33,9 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Info"
         android:id="@+id/intro_info"
-        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textSize="18sp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textStyle="bold"
@@ -47,10 +48,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Description"
+        android:textAlignment="center"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:textSize="30sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:id="@+id/intro_description"
@@ -60,7 +61,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Destination"
+        android:text="@string/change_destination_button"
         android:id="@+id/change_destination"
         android:layout_below="@+id/intro_description"
         android:layout_centerHorizontal="true"

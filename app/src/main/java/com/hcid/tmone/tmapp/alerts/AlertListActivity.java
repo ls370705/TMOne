@@ -2,7 +2,6 @@ package com.hcid.tmone.tmapp.alerts;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -18,13 +17,13 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hcid.tmone.tmapp.R;
 import com.hcid.tmone.tmapp.framework.FrameworkActivity;
 import com.hcid.tmone.tmapp.utilities.MemDB;
 
+//TODO: Add sorting function to the list (by time, name or severity)
 public class AlertListActivity extends Fragment {
 
     public static String currentIncident = "incident 1";
@@ -32,7 +31,7 @@ public class AlertListActivity extends Fragment {
             R.drawable.ic_danger, R.drawable.ic_danger, R.drawable.ic_question, R.drawable.ic_danger};
     MemDB memDB = new MemDB();
     String[] titles = memDB.getIncidentTitles();
-    String[] severities = new String[memDB.getNUMBER_OF_INCEDENTS()];
+    String[] severities = new String[memDB.getNUMBER_OF_INCIDENTS()];
 
     @Nullable
     @Override
@@ -40,7 +39,7 @@ public class AlertListActivity extends Fragment {
         View v = inflater.inflate(R.layout.activity_alert_list, container, false);
         setHasOptionsMenu(true);
 
-        for(int i = 0 ; i < memDB.getNUMBER_OF_INCEDENTS() ; i++){
+        for(int i = 0 ; i < memDB.getNUMBER_OF_INCIDENTS() ; i++){
             severities[i] = memDB.getIncidentSeverity(titles[i]);
         }
 
