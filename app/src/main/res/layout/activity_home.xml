@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hcid.tmone.tmapp.introduction.HomeActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_blurred"
+        android:scaleType="centerCrop"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Cambodia"
+        android:textAlignment="center"
+        android:id="@+id/intro_title"
+        android:paddingTop="50dp"
+        android:paddingBottom="10dp"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Info"
+        android:id="@+id/intro_info"
+        android:textSize="30sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/intro_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Description"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:id="@+id/intro_description"
+        android:layout_below="@+id/intro_info"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Destination"
+        android:id="@+id/change_destination"
+        android:layout_below="@+id/intro_description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp" />
+</RelativeLayout>

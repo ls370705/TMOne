@@ -22,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hcid.tmone.tmapp.R;
+import com.hcid.tmone.tmapp.framework.FrameworkActivity;
 import com.hcid.tmone.tmapp.utilities.MemDB;
 
 public class AlertListActivity extends Fragment {
@@ -54,6 +55,7 @@ public class AlertListActivity extends Fragment {
 
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame, new AlertActivity());
+                FrameworkActivity.canBack = true;
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

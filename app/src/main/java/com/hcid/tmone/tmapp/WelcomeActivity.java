@@ -14,6 +14,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -27,6 +28,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     MemDB memDB = new MemDB();
     private AutoCompleteTextView autoCompleteTextView;
+    private ImageView image[] = new ImageView[5];
+    public static String currentSelectedPlace = "Cambodia";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,27 +45,34 @@ public class WelcomeActivity extends AppCompatActivity {
             autoCompleteTextView.setAdapter(adapter);
         }
 
-        ImageView mimageView = (ImageView) findViewById(R.id.image1);
+        final String[] places = memDB.getPlaces();
 
-        Bitmap mbitmap = ((BitmapDrawable)mimageView.getDrawable()).getBitmap();
-//        Bitmap mbitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.img_angkor_wat,null)).getBitmap();
-        Bitmap imageRounded = Bitmap.createBitmap(mbitmap.getWidth(), mbitmap.getHeight(), mbitmap.getConfig());
-        Canvas canvas = new Canvas(imageRounded);
-        Paint mpaint = new Paint();
-        mpaint.setAntiAlias(true);
-        mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 100, 100, mpaint);// Round Image Corner 100 100 100 100
-        mimageView.setImageBitmap(imageRounded);
-
+        image[0] = (ImageView) findViewById(R.id.image1);
+        image[1] = (ImageView) findViewById(R.id.image2);
+        image[2] = (ImageView) findViewById(R.id.image3);
+        image[3] = (ImageView) findViewById(R.id.image4);
+        image[4] = (ImageView) findViewById(R.id.image5);
+        for (int i = 0; i < 5; i++) {
+            final String selectedPlace = places[i];
+            image[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    currentSelectedPlace = selectedPlace;
+                    startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
+                }
+            });
+        }
     }
 
     public void search(View view){
         String destination = autoCompleteTextView.getText().toString();
         autoCompleteTextView.setText("");
 
-        MainActivity.currentSelectedPlace = EditDistance.getResult(destination,memDB.getPlaces());
+        currentSelectedPlace = EditDistance.getResult(destination,memDB.getPlaces());
 
+        Log.d("PLACEWEL",currentSelectedPlace);
         Intent intent = new Intent(WelcomeActivity.this, FrameworkActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 

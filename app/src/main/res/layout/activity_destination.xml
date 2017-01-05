@@ -12,34 +12,6 @@
         android:layout_height="match_parent"
         android:background="#d3d3d3">
 
-
-        <RelativeLayout
-            android:id="@+id/intro_block"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:background="@color/white">>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Introduction"
-                android:id="@+id/introTitle"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="I&apos;m intro"
-                android:id="@+id/intro_contect"
-                android:layout_below="@+id/introTitle"
-                android:layout_alignParentStart="true" />
-        </RelativeLayout>
-
         <RelativeLayout
             android:id="@+id/block1"
             android:layout_width="match_parent"

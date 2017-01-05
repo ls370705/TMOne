@@ -5,13 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
+import android.widget.Toast;
 
-import com.hcid.tmone.tmapp.MainActivity;
+import com.hcid.tmone.tmapp.WelcomeActivity;
 import com.hcid.tmone.tmapp.alerts.AlertListActivity;
 import com.hcid.tmone.tmapp.checklist.CheckListActivity;
 import com.hcid.tmone.tmapp.introduction.DestinationActivity;
 import com.hcid.tmone.tmapp.account.AccountActivity;
+import com.hcid.tmone.tmapp.introduction.HomeActivity;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 import com.hcid.tmone.tmapp.R;
@@ -19,7 +20,7 @@ import com.hcid.tmone.tmapp.R;
 public class FrameworkActivity extends AppCompatActivity {
 
     BottomBar mBottomBar;
-
+    public static boolean canBack = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,20 +28,18 @@ public class FrameworkActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_home_white_24dp);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        setTitle(MainActivity.currentSelectedPlace);
+
+        Log.d("PLACEFRA",WelcomeActivity.currentSelectedPlace);
+        setTitle(WelcomeActivity.currentSelectedPlace);
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
         mBottomBar.setItemsFromMenu(R.menu.menu_bottom_bar, new OnMenuTabClickListener() {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
                 switch (menuItemId) {
+                    case R.id.summary:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, new HomeActivity()).commit();
+                        break;
                     case R.id.scene:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame, new DestinationActivity()).commit();
                         break;
@@ -64,14 +63,11 @@ public class FrameworkActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-        int count = getSupportFragmentManager().getBackStackEntryCount();
-        Log.d("COUNT", "Count: " + count);
-        if (count == 0) {
+        if(canBack){
             super.onBackPressed();
-
-        } else {
-            getSupportFragmentManager().popBackStack();
+            canBack = false;
+        }else{
+            Toast.makeText(getApplicationContext(),"Back Pressed" + getFragmentManager().getBackStackEntryCount(),Toast.LENGTH_SHORT).show();
         }
 
     }

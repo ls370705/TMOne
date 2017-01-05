@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hcid.tmone.tmapp.R;
+import com.hcid.tmone.tmapp.framework.FrameworkActivity;
 import com.hcid.tmone.tmapp.utilities.MemDB;
 
 public class CheckListActivity extends Fragment {
@@ -46,6 +47,7 @@ public class CheckListActivity extends Fragment {
                     currentSelectedItem = ((TextView)((RelativeLayout) i.getChildAt(1)).getChildAt(0)).getText().toString();
                     Log.d("ITEM", "Current Selected Item: " + currentSelectedItem);
                     getFragmentManager().beginTransaction().replace(R.id.frame,new ItemActivity()).addToBackStack(null).commit();
+                    FrameworkActivity.canBack = true;
                 }
             });
         }
