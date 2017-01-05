@@ -38,22 +38,22 @@ public class CheckListActivity extends Fragment {
         for(int i = 0 ; i < left_col.getChildCount() ; i++){
             LinearLayout temp = (LinearLayout) left_col.getChildAt(i);
             TextView tempTextTitle = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(0));
-            TextView tempTextVote = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(1));
+            //TextView tempTextVote = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(1));
             tempTextTitle.setText(checklist[i * 2]);
-            String votes = "votes: " + memDB.getItemVotes(checklist[i * 2]) + "";
-            tempTextVote.setText(votes);
+            //String votes = "votes: " + memDB.getItemVotes(checklist[i * 2]) + "";
+            //tempTextVote.setText(votes);
             items[i * 2] = (LinearLayout) left_col.getChildAt(i);
 
             temp = (LinearLayout) right_col.getChildAt(i);
             tempTextTitle = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(0));
-            tempTextVote = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(1));
+            //tempTextVote = (TextView)(((RelativeLayout)temp.getChildAt(1)).getChildAt(1));
             tempTextTitle.setText(checklist[i * 2 + 1]);
-            votes = "votes: " + memDB.getItemVotes(checklist[i * 2 + 1]) + "";
-            tempTextVote.setText(votes);
+            //votes = "votes: " + memDB.getItemVotes(checklist[i * 2 + 1]) + "";
+            //tempTextVote.setText(votes);
             items[i * 2 + 1] = (LinearLayout) right_col.getChildAt(i);
         }
 
-        for(final LinearLayout i : items){
+        /*for(final LinearLayout i : items){
             i.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -63,7 +63,7 @@ public class CheckListActivity extends Fragment {
                     FrameworkActivity.canBack = true;
                 }
             });
-        }
+        }*/
         return v;
     }
 

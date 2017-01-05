@@ -27,7 +27,7 @@ public class HomeActivity extends Fragment {
         View v = inflater.inflate(R.layout.activity_home, container, false);
         setHasOptionsMenu(true);
 
-        MemDB memDB = new MemDB();
+        /*MemDB memDB = new MemDB();
 
         TextView intro_title = (TextView) v.findViewById(R.id.intro_title);
         TextView intro_info = (TextView) v.findViewById(R.id.intro_info);
@@ -48,7 +48,7 @@ public class HomeActivity extends Fragment {
                 startActivity(intent);
                 getActivity().finish();
             }
-        });
+        });*/
         return v;
     }
 

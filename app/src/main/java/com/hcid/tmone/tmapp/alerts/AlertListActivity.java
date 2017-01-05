@@ -54,7 +54,6 @@ public class AlertListActivity extends Fragment {
 
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame, new AlertActivity());
-                FrameworkActivity.canBack = true;
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

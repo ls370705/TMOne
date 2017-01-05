@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000">
+        android:background="#d3d3d3">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -55,14 +55,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote1"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart1"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -92,14 +93,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote3"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart3"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -129,14 +131,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote5"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart5"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -166,14 +169,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote7"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart7"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -203,14 +207,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote9"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart9"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -240,14 +245,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote11"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart11"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -286,14 +292,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote2"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart2"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -323,14 +330,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote4"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart4"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -360,14 +368,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote6"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart6"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -397,14 +406,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote8"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart8"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -434,14 +444,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote10"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart10"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -471,14 +482,15 @@
                             android:paddingEnd="20dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="20dp"
-                            android:paddingEnd="20dp"
-                            android:id="@+id/vote12"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"/>
+                        <ToggleButton
+                            android:id="@+id/heart12"
+                            android:textOn=""
+                            android:textOff=""
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_marginEnd="10sp"
+                            android:background="@drawable/custom_heart"
+                            android:layout_alignParentEnd="true" />
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>

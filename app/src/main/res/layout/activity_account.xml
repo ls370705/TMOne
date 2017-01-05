@@ -10,13 +10,131 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#d3d3d3">
+        android:background="#ffffff">
+
+
+        <ImageView
+            android:layout_width="170sp"
+            android:layout_height="170sp"
+            android:id="@+id/account_image"
+            android:src="@drawable/profile_icon"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:text="@string/title_activity_account" />
+            android:id="@+id/account_title"
+            android:layout_alignParentTop="true"
+            android:gravity="right"
+            android:layout_marginTop="80sp"
+            android:paddingEnd="35sp"
+            android:text="Yin Hung Chen"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/account_info"
+            android:gravity="right"
+            android:layout_below="@+id/account_title"
+            android:paddingEnd="38sp"
+            android:layout_marginTop="5sp"
+            android:text="Hsinchu, Taiwan"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/account_job"
+            android:gravity="right"
+            android:layout_below="@+id/account_info"
+            android:paddingEnd="65sp"
+            android:layout_marginTop="5sp"
+            android:text="Student"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/account_title2"
+            android:gravity="left"
+            android:layout_below="@+id/account_job"
+            android:layout_marginTop="60sp"
+            android:paddingStart="15sp"
+            android:text="My Post"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/account_text1"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/account_title2"
+            android:layout_marginTop="5sp"
+            android:gravity="center_vertical|left"
+            android:paddingStart="15sp"
+            android:text="Post 1"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:background="#33000000"/>
+
+        <TextView
+            android:id="@+id/account_text2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/account_text1"
+            android:layout_marginTop="1sp"
+            android:gravity="center_vertical|left"
+            android:paddingStart="15sp"
+            android:text="Post 2"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:background="#33000000"/>
+
+        <TextView
+            android:id="@+id/account_text3"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/account_text2"
+            android:layout_marginTop="1sp"
+            android:gravity="center_vertical|left"
+            android:paddingStart="15sp"
+            android:text="Post 3"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:background="#33000000"/>
+
+        <TextView
+            android:id="@+id/account_text4"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/account_text3"
+            android:layout_marginTop="1sp"
+            android:gravity="center_vertical|left"
+            android:paddingStart="15sp"
+            android:text="Post 4"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:background="#33000000"/>
+
+        <TextView
+            android:id="@+id/account_text5"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/account_text4"
+            android:layout_marginTop="1sp"
+            android:gravity="center_vertical|left"
+            android:paddingStart="15sp"
+            android:text="Post 5"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:background="#33000000"/>
 
     </RelativeLayout>
 

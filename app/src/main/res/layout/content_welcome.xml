@@ -11,67 +11,19 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6491ca">
-
-
-        <TextView
-            android:id="@+id/app_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/app_title_one"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:layout_alignBottom="@+id/app_title_two"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="45dp" />
-        <TextView
-            android:id="@+id/app_title_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/app_title_two"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="126dp" />
-
-        <AutoCompleteTextView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="50dp"
-            android:textStyle="italic"
-            android:textSize="20sp"
-            android:id="@+id/drop_down"
-            android:layout_below="@+id/app_title" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/start_button_text"
-            android:id="@+id/search"
-            android:onClick="search"
-            android:layout_below="@+id/drop_down"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="50dp"/>
+        android:background="#d3d3d3">
 
         <RelativeLayout android:id="@+id/block1"
             android:layout_width="match_parent"
             android:layout_height="200sp"
-            android:background="#000000"
-            android:layout_below="@+id/search">
+            android:layout_alignParentStart="true"
+            android:background="#000000">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/image1"
                 android:src="@drawable/img_angkor_wat"
-                android:layout_alignParentStart="true"
                 android:scaleType="centerCrop"
                 android:alpha=".8" />
 
@@ -84,7 +36,7 @@
                 android:layout_alignEnd="@id/image1"
                 android:layout_alignBottom="@id/image1"
                 android:gravity="center"
-                android:text="Cambodia"
+                android:text="Going to Cambodia"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="#ffffff" />
@@ -116,7 +68,7 @@
                 android:layout_alignEnd="@id/image2"
                 android:layout_alignBottom="@id/image2"
                 android:gravity="center"
-                android:text="@string/india_text"
+                android:text="Going to India"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="#ffffff" />
@@ -148,7 +100,7 @@
                 android:layout_alignEnd="@id/image3"
                 android:layout_alignBottom="@id/image3"
                 android:gravity="center"
-                android:text="@string/brazil_text"
+                android:text="Going to Brazil"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="#ffffff" />
@@ -180,7 +132,7 @@
                 android:layout_alignEnd="@id/image4"
                 android:layout_alignBottom="@id/image4"
                 android:gravity="center"
-                android:text="@string/turkey_text"
+                android:text="Going to Turkey"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="#ffffff" />
@@ -212,7 +164,7 @@
                 android:layout_alignEnd="@id/image5"
                 android:layout_alignBottom="@id/image5"
                 android:gravity="center"
-                android:text="@string/kenya_text"
+                android:text="Going to Kenya"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="#ffffff" />

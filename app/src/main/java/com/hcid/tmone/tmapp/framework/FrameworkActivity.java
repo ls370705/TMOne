@@ -19,7 +19,6 @@ import com.hcid.tmone.tmapp.R;
 public class FrameworkActivity extends AppCompatActivity {
 
     BottomBar mBottomBar;
-    public static boolean canBack = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,14 +58,4 @@ public class FrameworkActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        if(canBack){
-            super.onBackPressed();
-            canBack = false;
-        }else{
-            Toast.makeText(getApplicationContext(),"Back Pressed" + getFragmentManager().getBackStackEntryCount(),Toast.LENGTH_SHORT).show();
-        }
-
-    }
 }

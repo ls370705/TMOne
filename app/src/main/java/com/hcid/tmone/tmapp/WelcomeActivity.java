@@ -3,7 +3,10 @@ package com.hcid.tmone.tmapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -30,13 +33,7 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),android.R.layout.select_dialog_singlechoice,memDB.getPlaces());
-        autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.drop_down);
-        if (autoCompleteTextView != null) {
-            autoCompleteTextView.setThreshold(1);
-            autoCompleteTextView.setAdapter(adapter);
-        }
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         final String[] places = memDB.getPlaces();
 
@@ -57,14 +54,34 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 
-    public void search(View view){
-        String destination = autoCompleteTextView.getText().toString();
-        autoCompleteTextView.setText("");
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        currentSelectedPlace = EditDistance.getResult(destination,memDB.getPlaces());
+        final MenuItem item = menu.findItem(R.id.main_search);
+        SearchView searchView = (SearchView) item.getActionView();
+        searchView.setQueryHint("Search for you next destination...   ");
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                item.collapseActionView();
+                startActivity(new Intent(WelcomeActivity.this, FrameworkActivity.class));
+                return false;
+            }
 
-        Intent intent = new Intent(WelcomeActivity.this, FrameworkActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivity(intent);
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        searchView.setIconifiedByDefault(false);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
