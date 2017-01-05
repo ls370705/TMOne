@@ -15,7 +15,7 @@ public class MemDB {
     private HashMap<String, String> destination_information = new HashMap<>();
     private String[] destinations = {"Cambodia", "India", "Brazil", "Turkey", "Kenya"};
 
-    private String[] items = {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10", "item 11", "item 12"};
+    private String[] items = {"Boots", "T-shirt", "Backpack", "Seakers", "Bikini", "Umbrella", "Flip-flop", "Sunscreen", "Jacket", "Sunglasses", "Suitcase", "Shorts"};
     private HashMap<String, Item> checklist = new HashMap<>();
     private HashMap<String, Incident> incidents = new HashMap<>();
 
