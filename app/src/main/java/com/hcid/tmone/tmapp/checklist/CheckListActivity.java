@@ -85,7 +85,7 @@ public class CheckListActivity extends Fragment {
     private void DialogEvent() {
         new AlertDialog.Builder(getActivity())
                 .setTitle("Help")
-                .setMessage("Put some help messages here.")
+                .setMessage("These are what other travelers put in their backpacks. You might need them in your journey. Give it a heart if it's useful!")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

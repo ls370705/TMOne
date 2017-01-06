@@ -54,13 +54,13 @@ public class HomeActivity extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_destination, menu);
+        inflater.inflate(R.menu.menu_welcome, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.destination_help) {
+        if (item.getItemId() == R.id.home_help) {
             DialogEvent();
             return true;
         }
@@ -70,7 +70,7 @@ public class HomeActivity extends Fragment {
     private void DialogEvent() {
         new AlertDialog.Builder(getActivity())
                 .setTitle("Help")
-                .setMessage("Put some help messages here.")
+                .setMessage("These are overview information for the country.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

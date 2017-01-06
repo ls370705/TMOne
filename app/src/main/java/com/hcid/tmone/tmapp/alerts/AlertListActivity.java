@@ -119,7 +119,7 @@ public class AlertListActivity extends Fragment {
     private void DialogEvent() {
         new AlertDialog.Builder(getActivity())
                 .setTitle("Help")
-                .setMessage("Put some help messages here.")
+                .setMessage("These are questions and information posted by other travelers. Find some useful information here.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

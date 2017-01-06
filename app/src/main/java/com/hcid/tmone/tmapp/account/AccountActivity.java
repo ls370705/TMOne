@@ -42,7 +42,7 @@ public class AccountActivity extends Fragment {
     private void DialogEvent() {
         new AlertDialog.Builder(getActivity())
                 .setTitle("Help")
-                .setMessage("Put some help messages here.")
+                .setMessage("Find your history posts here. Click the pencil button to edit your profile.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

@@ -61,7 +61,7 @@ public class DestinationActivity extends Fragment {
     private void DialogEvent() {
         new AlertDialog.Builder(getActivity())
                 .setTitle("Help")
-                .setMessage("Put some help messages here.")
+                .setMessage("These are scenes found by other travelers here. Post what you've met in your journey. Give it a heart if you like it!")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

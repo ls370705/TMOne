@@ -31,6 +31,6 @@
     <string name="title_activity_account">Account</string>
     <string name="title_activity_framework">Cambodia</string>
     <string name="title_activity_main">Where to next?</string>
-    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_welcome">TravelHelp</string>
     <string name="title_activity_home">HomeActivity</string>
 </resources>
